@@ -1,11 +1,9 @@
-# Виртуальное окружение
 .venv/
 venv/
 env/
 ENV/
 .env
 
-# Python кэш
 __pycache__/
 *.pyc
 *.pyo
@@ -18,24 +16,20 @@ __pycache__/
 *.exe
 *.dylib
 
-# Базы данных
 *.db
 *.sqlite3
 *.sqlite
 
-# Файлы конфигурации
 .env
 *.conf
 config.py
 *.config
 *.cfg
 
-# Логи
 *.log
 logs/
 *.log.*
 
-# ID редакторов
 .vscode/
 .idea/
 *.swp
@@ -45,46 +39,38 @@ logs/
 Thumbs.db
 *.iml
 
-# Бэкапы
 *.bak
 *.backup
 data/backups/
 *.old
 
-# Файлы токенов
 *.token
 *.key
 *.pem
 *.crt
 
-# Тестовые файлы
 test_*.py
 *_test.py
 test.py
 test_connection.py  # если не хотите хранить тесты в репозитории
 
-# Временные файлы
 tmp/
 temp/
 *.tmp
 *.temp
 
-# Дистрибутивы и сборки
 dist/
 build/
 *.egg-info/
 *.egg
 
-# Jupyter notebooks (если есть)
 .ipynb_checkpoints/
 *.ipynb
 
-# Системные файлы Windows
 desktop.ini
 *.lnk
 *.url
 
-# Системные файлы Linux/Mac
 .DS_Store
 .DS_Store?
 ._*
@@ -93,7 +79,6 @@ desktop.ini
 ehthumbs.db
 Thumbs.db
 
-# Файлы зависимостей
 pip-log.txt
 pip-delete-this-directory.txt
 
@@ -102,14 +87,9 @@ pip-delete-this-directory.txt
 .dmypy.json
 dmypy.json
 
-# Pyre type checker
 .pyre/
-
-# pytype static type analyzer
+alyzer
 .pytype/
-
-# Cython debug symbols
 cython_debug/
 
-# Profiling data
 .prof

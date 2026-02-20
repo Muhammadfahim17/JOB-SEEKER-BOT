@@ -12,7 +12,7 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Таджикистан-🇹🇯-red?style=flat-square">
+   <img src="https://img.shields.io/badge/Таджикистан-🇹🇯-red?style=flat-square">
   <img src="https://img.shields.io/badge/Телефон-+992-orange?style=flat-square">
   <img src="https://img.shields.io/badge/Зарплата-сомони-green?style=flat-square">
 </p>
@@ -87,12 +87,13 @@
 | Технология | Версия | Описание |
 |------------|--------|----------|
 | **Python** | 3.10+ | Основной язык программирования |
-| **aiogram** | 3.17.0 | Фреймворк для Telegram ботов |
-| **asyncpg** | 0.30.0 | Асинхронный драйвер PostgreSQL |
-| **SQLAlchemy** | 2.0.39 | ORM для работы с базой данных |
-| **PostgreSQL** | 15+ | Реляционная база данных |
+| **aiogram** | 3.4.1 | Фреймворк для Telegram ботов |
+| **aiosqlite** | 0.19.0 | Асинхронный драйвер SQLite |
+| **SQLAlchemy** | 2.0.29 | ORM для работы с базой данных |
+| **SQLite** | 3+ | Лёгкая файловая база данных |
 | **python-dotenv** | 1.0.1 | Загрузка переменных окружения |
-| **aiofiles** | 24.1.0 | Работа с файлами |
+| **APScheduler** | 3.10.4 | Планировщик задач |
+| **aiofiles** | 23.2.1 | Работа с файлами |
 
 ---
 
@@ -145,13 +146,13 @@ python main.py
 ##### Файл .env:
 ```env
   # Токен вашего бота (получить у @BotFather)
-BOT_TOKEN=Ваш токен бота
+  BOT_TOKEN=ваш_токен_бота
 
-# ID администраторов (через запятую)
-ADMIN_IDS=Ваш ID
+  # ID администраторов (через запятую)
+  ADMIN_IDS=123456789,987654321
 
-# Подключение к базе данных
-DATABASE_URL=postgresql+asyncpg://postgres:password@localhost:5432/resume_bot
+  # Подключение к базе данных
+  DATABASE_URL=sqlite+aiosqlite:///resume_bot.db
 ```
 
 #### Как получить токен бота:
@@ -194,6 +195,17 @@ DATABASE_URL=postgresql+asyncpg://postgres:password@localhost:5432/resume_bot
 - Если вы нашли ошибку или у вас есть предложения:
 1. Напишите в поддержку через бота
 2. Или свяжитесь напрямую с разработчиком
+
+
+## 📊 БАЗА ДАННЫХ
+Проект использует SQLite — легковесную файловую базу данных.
+
+#### Преимущества SQLite:
+- ✅ Не требует отдельного сервера
+- ✅ Всё хранится в одном файле (resume_bot.db)
+- ✅ Простота бэкапов (просто скопировать файл)
+- ✅ Идеально для небольших проектов
+- ✅ Не требует настройки
 
 
 ⭐ ПОДДЕРЖКА

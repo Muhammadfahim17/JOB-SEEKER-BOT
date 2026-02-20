@@ -145,13 +145,13 @@ python main.py
 ##### Файл .env:
 ```env
   # Токен вашего бота (получить у @BotFather)
-BOT_TOKEN=8598628042:AAG4xb5XICHXEUIZPr7Yp9IKbIfwfz5gYmU
+BOT_TOKEN=Ваш токен бота
 
 # ID администраторов (через запятую)
-ADMIN_IDS=6532344331
+ADMIN_IDS=Ваш ID
 
 # Подключение к базе данных
-DATABASE_URL=postgresql+asyncpg://postgres:220409_mf@localhost:5432/resume_bot
+DATABASE_URL=postgresql+asyncpg://postgres:password@localhost:5432/resume_bot
 ```
 
 #### Как получить токен бота:

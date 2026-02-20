@@ -4,7 +4,6 @@ from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from aiogram.utils.keyboard import InlineKeyboardBuilder
 
 
-# Главное меню
 def get_main_menu():
     buttons = [
         [KeyboardButton(text="📋 Заполнить анкету")],
@@ -12,21 +11,18 @@ def get_main_menu():
     ]
     return ReplyKeyboardMarkup(keyboard=buttons, resize_keyboard=True)
 
-# Кнопка отмены
 def get_cancel_keyboard():
     return ReplyKeyboardMarkup(
         keyboard=[[KeyboardButton(text="❌ Отмена")]],
         resize_keyboard=True
     )
 
-# Кнопка пропуска
 def get_skip_keyboard():
     return ReplyKeyboardMarkup(
         keyboard=[[KeyboardButton(text="⏭️ Пропустить"), KeyboardButton(text="❌ Отмена")]],
         resize_keyboard=True
     )
 
-# Кнопка договорной зарплаты
 def get_salary_keyboard():
     return ReplyKeyboardMarkup(
         keyboard=[[KeyboardButton(text="🤝 Договорная")], [KeyboardButton(text="❌ Отмена")]],
@@ -49,7 +45,6 @@ def get_job_keyboard():
     ]
     return ReplyKeyboardMarkup(keyboard=buttons, resize_keyboard=True)
 
-# Кнопки подтверждения
 def get_confirm_keyboard():
     builder = InlineKeyboardBuilder()
     builder.add(InlineKeyboardButton(text="✅ Всё верно, отправить", callback_data="confirm_send"))
@@ -58,7 +53,6 @@ def get_confirm_keyboard():
     builder.adjust(1)
     return builder.as_markup()
 
-# Кнопки для изменения
 def get_edit_keyboard():
     builder = InlineKeyboardBuilder()
     builder.add(InlineKeyboardButton(text="👤 Имя", callback_data="edit_name"))
@@ -74,13 +68,11 @@ def get_edit_keyboard():
     builder.adjust(2)
     return builder.as_markup()
 
-# Кнопка назад
 def back_button(callback_data="back"):
     builder = InlineKeyboardBuilder()
     builder.add(InlineKeyboardButton(text="🔙 Назад", callback_data=callback_data))
     return builder.as_markup()
 
-# FAQ клавиатура
 def get_faq_keyboard():
     builder = InlineKeyboardBuilder()
     builder.add(InlineKeyboardButton(text="📞 Связаться с нами", callback_data="support"))
@@ -88,7 +80,6 @@ def get_faq_keyboard():
     builder.adjust(1)
     return builder.as_markup()
 
-# Кнопка отправки сообщения в поддержку
 def get_support_keyboard():
     builder = InlineKeyboardBuilder()
     builder.add(InlineKeyboardButton(text="✅ Отправить", callback_data="support_send"))

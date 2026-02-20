@@ -3,7 +3,6 @@ import random
 import re
 from datetime import datetime
 
-# Загрузка советов
 def get_random_tip():
     try:
         with open("data/tips.json", "r", encoding="utf-8") as f:
@@ -12,7 +11,6 @@ def get_random_tip():
     except:
         return "🌟 Верь в себя! У тебя всё получится!"
 
-# Загрузка FAQ
 def get_faq():
     try:
         with open("data/faq.json", "r", encoding="utf-8") as f:
@@ -20,20 +18,16 @@ def get_faq():
     except:
         return []
 
-# Проверка имени (только буквы)
 def is_valid_name(name):
     return bool(re.match(r'^[а-яА-Яa-zA-Z\s\-]+$', name)) and len(name) >= 2
 
-# Проверка возраста
 def is_valid_age(age):
     return age.isdigit() and 14 <= int(age) <= 100
 
-# Проверка телефона
 def is_valid_phone(phone):
     """Проверяет номер телефона для Таджикистана (+992)"""
     phone = phone.replace(' ', '').replace('-', '').replace('(', '').replace(')', '')
     
-    # Форматы: +992XXXXXXXXX, 992XXXXXXXXX, 8XXXXXXXXX, 9XXXXXXXXX
     if phone.startswith('+992') and len(phone) == 13:
         return True
     elif phone.startswith('992') and len(phone) == 12:
@@ -44,26 +38,21 @@ def is_valid_phone(phone):
         return True
     return False
 
-# Форматирование номера
 def format_phone(phone):
     """Приводит номер к формату +992XXXXXXXXX"""
     phone = phone.replace(' ', '').replace('-', '').replace('(', '').replace(')', '')
     
     if phone.startswith('+992'):
-        return phone  # уже в правильном формате
+        return phone  
     elif phone.startswith('992'):
-        return '+' + phone  # +992XXXXXXXX
+        return '+' + phone
     elif phone.startswith('8') and len(phone) == 10:
-        # 8XXXXXXXXX -> +992XXXXXXXXX
         return '+992' + phone[1:]
     elif phone.startswith('9') and len(phone) == 9:
-        # 9XXXXXXXX -> +9929XXXXXXXX
         return '+992' + phone
     else:
-        # Если ничего не подходит, просто добавляем +992
         return '+992' + phone
 
-# Форматирование анкеты
 def format_resume(user_data):
     resume = f"""
 ╔══════════════════════════════╗
